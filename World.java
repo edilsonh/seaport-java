@@ -14,6 +14,8 @@ public class World extends Thing {
     for (int i = 0; i<seaPortAL.size(); i++) {
       if (seaPortAL.get(i).index == ind) {
         seaPortAL.get(i).addShipToQue(s);
+      } else {
+        seaPortAL.get(i).addShipToShips(s);
       }
     }
   }
@@ -64,6 +66,14 @@ public class World extends Thing {
               seaPortAL.get(i).addDock(d);
             }
           }
+        } else if (l[0].equals("person")) {
+          Person p = new Person(l[1], Integer.parseInt(l[2]), Integer.parseInt(l[3]), l[4]);
+          for (int i = 0; i<seaPortAL.size(); i++) {
+            if (seaPortAL.get(i).index == Integer.parseInt(l[3])) {
+              seaPortAL.get(i).addPerson(p);
+            }
+          }
+          System.out.println(p.toString());
         }
       }
     } catch(Exception e) {
