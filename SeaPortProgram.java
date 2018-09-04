@@ -8,24 +8,8 @@ import java.util.Scanner;
 
 public class SeaPortProgram extends JFrame {
   public SeaPortProgram(File sf) {
-    System.out.println("Processing >"+sf.toString()+"<");
-    try {
-      Scanner sc = new Scanner("ship ren 3000 3000 45 45 45 45");
-
-      while (sc.hasNextLine()) {
-        String line = sc.nextLine();
-        String l[] = line.split(" ");
-
-        System.out.println(l[0]);
-        if (l[0].equals("ship")) {
-
-          Ship s = new Ship(l[1], Integer.parseInt(l[2]), Integer.parseInt(l[3]), Double.parseDouble(l[4]), Double.parseDouble(l[5]), Double.parseDouble(l[6]), Double.parseDouble(l[7]));
-          System.out.println(s.toString());
-        }
-      }
-    } catch(Exception e) {
-      System.out.println(e);
-    }
+    World w = new World();
+    w.process(sf);
 
     setTitle("SeaPort");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
