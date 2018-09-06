@@ -12,6 +12,6 @@ public class PassengerShip extends Ship {
   }
 
   public String toString() {
-    return super.toString() + " " + this.numberOfOccupiedRooms + " " + this.numberOfPassengers + " " + this.numberOfRooms;
+    return "Passenger Ship: " + this.name + " " + this.index;
   }
 }

@@ -80,4 +80,34 @@ public class World extends Thing {
       System.out.println(e);
     }
   }
+
+  public String displayData() {
+    String dataString = ">>>>> The World: \n\n\n SeaPort: ";
+    for (int i = 0; i<seaPortAL.size(); i++) {
+      dataString += seaPortAL.get(i) + "\n\n";
+      for (int j = 0; j<seaPortAL.get(i).docks.size(); j++) {
+        System.out.println(seaPortAL.get(i).docks.get(j));
+        dataString += "     Dock:" + seaPortAL.get(i).docks.get(j).name + " " + seaPortAL.get(i).docks.get(j).index + "\n";
+        dataString += "        Ship:" + seaPortAL.get(i).docks.get(j).s.toString() + "\n\n";
+      }
+
+      dataString += "\n     --- List of all ships:\n";
+
+      for (int ii = 0; ii<seaPortAL.get(i).que.size(); ii++) {
+        dataString += "        > " + seaPortAL.get(i).que.get(ii).toString() + "\n";
+      }
+
+      for (int jj = 0; jj<seaPortAL.get(i).ships.size(); jj++) {
+        dataString += "        > " + seaPortAL.get(i).ships.get(jj).toString() + "\n";
+      }
+
+      dataString += "\n\n     --- List of all persons:\n";
+
+      for (int k = 0; k<seaPortAL.get(i).persons.size(); k++) {
+        dataString += "        > " + seaPortAL.get(i).persons.get(k).toString() + "\n";
+      }
+    }
+
+    return dataString;
+  }
 }

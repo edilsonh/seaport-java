@@ -7,6 +7,6 @@ public class Person extends Thing {
   }
 
   public String toString() {
-    return super.toString() + " " + skill;
+    return "Person: " + this.name + " " + this.index + " " + this.skill;
   }
 }
